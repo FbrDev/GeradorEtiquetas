@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model GeradorEtiquetas.Models.EnderecoViewModel
+
+<form asp-action="GerarEtiqueta" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container">
+        <h1>Gerar Etiquetas</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <partial name="_Remetente" />
+            </div>
+            <div class="col-md-6 mt-3">
+                <partial name="_Destinatario" />
+            </div>
+            <div class="col-md-12 text-center mt-4">
+                <input type="submit" value="Gerar Etiqueta" class="btn btn-primary" />
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" id="openMapButton">Trajeto</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<partial name="_Maps" />
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

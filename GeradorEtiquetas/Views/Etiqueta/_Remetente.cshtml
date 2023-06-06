@@ -1,0 +1,53 @@
+﻿@model GeradorEtiquetas.Models.EnderecoViewModel
+
+<h2>Remetente</h2>
+<hr />
+<div class="form-group col-md-6">
+    <label asp-for="Remetente.Cep" class="control-label"></label>
+    <div class="d-flex">
+        <input asp-for="Remetente.Cep" class="form-control" />
+        <input type="button" value="Buscar CEP" onclick="buscarCEP('Remetente');" class="btn btn-primary" />
+    </div>
+    <span asp-validation-for="Remetente.Cep" class="text-danger"></span>
+</div>
+<div class="row">
+    <div class="form-group col-md-8">
+        <div class="form-group">
+            <label asp-for="Remetente.Logradouro" class="control-label"></label>
+            <input asp-for="Remetente.Logradouro" class="form-control" readonly />
+            <span asp-validation-for="Remetente.Logradouro" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group col-md-4">
+        <label asp-for="Remetente.Numero" class="control-label"></label>
+        <input asp-for="Remetente.Numero" class="form-control" />
+        <span asp-validation-for="Remetente.Numero" class="text-danger"></span>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <label asp-for="Remetente.Bairro" class="control-label"></label>
+        <input asp-for="Remetente.Bairro" class="form-control" readonly />
+        <span asp-validation-for="Remetente.Bairro" class="text-danger"></span>
+    </div>
+    <div class="form-group col-md-4">
+        <label asp-for="Remetente.Localidade" class="control-label"></label>
+        <input asp-for="Remetente.Localidade" class="form-control" readonly />
+        <span asp-validation-for="Remetente.Localidade" class="text-danger"></span>
+    </div>
+    <div class="form-group col-md-2">
+        <label asp-for="Remetente.Uf" class="control-label"></label>
+        <input asp-for="Remetente.Uf" class="form-control" readonly />
+        <span asp-validation-for="Remetente.Uf" class="text-danger"></span>
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="Remetente.Complemento" class="control-label"></label>
+    <input asp-for="Remetente.Complemento" class="form-control" />
+    <span asp-validation-for="Remetente.Complemento" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Remetente.Nome" class="control-label"></label>
+    <input asp-for="Remetente.Nome" class="form-control" />
+    <span asp-validation-for="Remetente.Nome" class="text-danger"></span>
+</div>

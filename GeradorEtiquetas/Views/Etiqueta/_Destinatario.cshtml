@@ -1,0 +1,51 @@
+﻿@model GeradorEtiquetas.Models.EnderecoViewModel
+
+<h2>Destinatário</h2>
+<hr />
+<div class="form-group col-md-6">
+    <label asp-for="Destinatario.Cep" class="control-label"></label>
+    <div class="d-flex">
+        <input asp-for="Destinatario.Cep" class="form-control" />
+        <input type="button" value="Buscar CEP" onclick="buscarCEP('Destinatario');" class="btn btn-primary" />
+    </div>
+    <span asp-validation-for="Destinatario.Cep" class="text-danger"></span>
+</div>
+<div class="row">
+    <div class="form-group col-md-8">
+        <label asp-for="Destinatario.Logradouro" class="control-label"></label>
+        <input asp-for="Destinatario.Logradouro" class="form-control" readonly />
+        <span asp-validation-for="Destinatario.Logradouro" class="text-danger"></span>
+    </div>
+    <div class="form-group col-md-4">
+        <label asp-for="Destinatario.Numero" class="control-label"></label>
+        <input asp-for="Destinatario.Numero" class="form-control" />
+        <span asp-validation-for="Destinatario.Numero" class="text-danger"></span>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <label asp-for="Destinatario.Bairro" class="control-label"></label>
+        <input asp-for="Destinatario.Bairro" class="form-control" readonly />
+        <span asp-validation-for="Destinatario.Bairro" class="text-danger"></span>
+    </div>
+    <div class="form-group col-md-4">
+        <label asp-for="Destinatario.Localidade" class="control-label"></label>
+        <input asp-for="Destinatario.Localidade" class="form-control" readonly />
+        <span asp-validation-for="Destinatario.Localidade" class="text-danger"></span>
+    </div>
+    <div class="form-group col-md-2">
+        <label asp-for="Destinatario.Uf" class="control-label"></label>
+        <input asp-for="Destinatario.Uf" class="form-control" readonly />
+        <span asp-validation-for="Destinatario.Uf" class="text-danger"></span>
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="Destinatario.Complemento" class="control-label"></label>
+    <input asp-for="Destinatario.Complemento" class="form-control" />
+    <span asp-validation-for="Destinatario.Complemento" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Destinatario.Nome" class="control-label"></label>
+    <input asp-for="Destinatario.Nome" class="form-control" />
+    <span asp-validation-for="Destinatario.Nome" class="text-danger"></span>
+</div>

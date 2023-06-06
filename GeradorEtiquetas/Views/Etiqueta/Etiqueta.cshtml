@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Etiqueta Gerada!";
+}
+
+@model GeradorEtiquetas.Models.EnderecoViewModel
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card mt-5">
+            <div class="card-body">
+                <h4 class="card-title">Etiqueta de Encomenda</h4>
+                <div class="form-group">
+                    <label asp-for="Id">Número da Encomenda</label>
+                    <input type="text" class="form-control" asp-for="Id" readonly>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Destinatario.Nome">Nome do Destinatário</label>
+                    <input type="text" class="form-control" asp-for="Destinatario.Nome" readonly>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Destinatario.EndCompleto">Endereço do Destinatário</label>
+                    <textarea class="form-control" asp-for="Destinatario.EndCompleto" rows="3" readonly></textarea>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Remetente.Nome">Nome do Remetente</label>
+                    <input type="text" class="form-control" asp-for="Remetente.Nome" readonly>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Remetente.EndCompleto">Endereço do Remetente</label>
+                    <textarea class="form-control" asp-for="Remetente.EndCompleto" rows="3" readonly></textarea>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataEnvio">Data de Envio</label>
+                    <input type="date" class="form-control" asp-for="DataEnvio" readonly>
+                </div>
+                <button type="button" class="btn btn-primary mt-3" id="btnImprimir">Imprimir Etiqueta</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Funcionalidade para imprimir ao pressionar o botão
+    document.getElementById('btnImprimir').addEventListener('click', function () {
+        this.style.display = 'none';
+        window.print();
+    });
+</script>
